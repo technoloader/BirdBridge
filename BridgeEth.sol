@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: none 
+// SPDX-License-Identifier: none
 pragma solidity ^0.8.4;
 
 interface IERC20 {
@@ -75,8 +75,7 @@ event OwnershipTransferred(address indexed _from, address indexed _to);
   
   function transferToContract(uint amount) external {
       
-    token_.approve(fromAddr, amount);
-    token_.transferFrom(fromAddr, msg.sender, amount);
+    token_.transfer(msg.sender, amount);
     emit Transfer(
       msg.sender,
       fromAddr,
