@@ -71,21 +71,6 @@ event OwnershipTransferred(address indexed _from, address indexed _to);
         require(msg.sender == admin);
         token.changeOwnership(_newOwner);
     }    
-    
-  
-  function transferToContract(uint amount) external {
-      
-    token_.transfer(msg.sender, amount);
-    emit Transfer(
-      msg.sender,
-      fromAddr,
-      amount,
-      block.timestamp,
-      nonce,
-      Step.TransferTo
-    );
-    
-  }
   
   function transferFromContract(address to, uint amount, uint otherChainNonce) external {
     require(msg.sender == admin, 'only admin');
